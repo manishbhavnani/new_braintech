@@ -15,10 +15,19 @@
       </ion-icon>
     </ion-avatar>
   </ion-navbar>
-  <ion-searchbar [(ngModel)]="searchQuery1" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)">
-  </ion-searchbar>
 
 
+ <ion-card>
+      
+        <ion-list>
+            <ion-searchbar [(ngModel)]="searchQuery1" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)" ></ion-searchbar>
+               <button ion-button style="margin-left:40%" (click)="imageList()">
+          <ion-icon ios="ios-images" md="md-images"></ion-icon>
+        </button>
+
+
+        </ion-list>
+ </ion-card>
 
 </ion-header>
 
@@ -119,6 +128,8 @@ Available Images
    <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
 </button>
 
+ 
   </ion-item>
 
+    
 </ion-footer>

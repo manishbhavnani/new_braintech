@@ -25,6 +25,9 @@ import { ContactSearch } from '../pages/contact/contact';
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 import { ContactAdd } from '../pages/contact/contactadd';
 import { ContactEdit } from '../pages/contact/contactedit';
+import { ImageProfileList } from '../pages/home/imageProfileList/imageprofilelist';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { ContactEdit } from '../pages/contact/contactedit';
     Music,
     ContactSearch,
     ContactAdd,
-    ContactEdit
+    ContactEdit,
+    ImageProfileList
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import { ContactEdit } from '../pages/contact/contactedit';
     LiveMap,
     ContactSearch,
     Music,
-    ContactAdd
+    ContactAdd,
+    ImageProfileList
   ],
   providers: [
     StatusBar,

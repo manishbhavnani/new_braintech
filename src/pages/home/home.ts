@@ -5,6 +5,8 @@ import { UserAdd } from '../user-add/user-add';
 import { Profile } from '../profile/profile';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Camera } from '@ionic-native/camera';
+import {ImageProfileList } from './imageProfileList/imageprofilelist';
+
 var lastIndex;
 @Component({
   selector: 'page-home',
@@ -45,7 +47,6 @@ constructor(public navCtrl: NavController, private nativeStorage: NativeStorage,
    * Initalization Of LoadData
    */
  public  loadData(): any {
-
     this.storage.get('brainvire').then((d) => {
       this.myTracks = d;
       this.data = d;
@@ -63,12 +64,9 @@ constructor(public navCtrl: NavController, private nativeStorage: NativeStorage,
     this.language = false;
   }
 
- public presentProfileModal(): any {
-    if (this.myTracks != null) {
-      let profileModal = this.modalCtrl.create(Profile, { userId: this.lastProfileData });
-      profileModal.present();
-       this.loadData();
-    }
+ public imageList(): any {
+      let profileModal = this.modalCtrl.create(ImageProfileList);
+      profileModal.present(); 
   }
 public editProfileModal(i): any {
     this.navCtrl.push(Profile, { userId: i });
@@ -151,12 +149,14 @@ public getImageFilter() {
 
   }
  public remove() {
+  console.log(this.userCheck);
     if (this.userCheck.length >= 1) {
       console.log("Total Push" + JSON.stringify(this.userCheck));
       for (let i of this.userCheck) {
         this.myTracks.splice(i.value, 1);
       }
       this.storage.set('brainvire', this.myTracks);
+      this.userCheck=[];
     }
   }
 }

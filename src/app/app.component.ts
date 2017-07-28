@@ -1,22 +1,48 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Nav, Platform } from 'ionic-angular';
+import { MapView } from '../pages/map/map';
+import { Music } from '../pages/music/music';
+import { PageGmapAutocomplete } from '../pages/map/page-gmap-autocomplete/page-gmap-autocomplete';
 import { HomePage } from '../pages/home/home';
+import { ContactSearch } from '../pages/contact/contact';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage: any = HomePage;
+  @ViewChild(Nav) nav: Nav;
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    this.initializeApp();
+  }
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleLightContent();
+      setTimeout(() => {
+        this.splashScreen.hide();
+      }, 100);
     });
   }
+
+  Map() {
+    this.nav.setRoot(MapView);
+
+  }
+
+
+  Music() {
+    this.nav.setRoot(Music);
+
+  }
+
+  Contact() {
+    this.nav.setRoot(ContactSearch);
+
+  }
+
+
+
 }
 

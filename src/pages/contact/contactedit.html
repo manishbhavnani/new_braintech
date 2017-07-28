@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons end>
+            <button ion-button icon-only>
+      </button>
+        </ion-buttons>
+        <ion-icon ion-item>
+            <h1 style="margin-left: 2%"> Contact Edit </h1>
+        </ion-icon>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header" style="margin-top: 18%">
+    <ion-list>
+        <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="name" placeholder="Enter Your Name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Another Name</ion-label>
+            <ion-input type="text" [(ngModel)]="nname" placeholder="Enter Your Other Name "></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>PhoneNumber</ion-label>
+            <ion-input type="tel" [(ngModel)]="number" placeholder="Enter Phone number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-select [(ngModel)]="numbertype">
+                <ion-option value="home">Home</ion-option>
+                <ion-option value="work">Work</ion-option>
+                <ion-option value="other">Other</ion-option>
+            </ion-select>
+        </ion-item>
+
+
+
+    </ion-list>
+
+</ion-content>
+<ion-footer no-border>
+    <button ion-button block (click)="update()">Update</button>
+    <button ion-button block (click)="removeContact()">Delete</button>
+
+</ion-footer>

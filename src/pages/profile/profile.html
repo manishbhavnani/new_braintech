@@ -1,0 +1,63 @@
+<ion-header>
+<ion-navbar>
+<ion-buttons end>
+  <button ion-button icon-only [navPush]="homepage">
+  
+  </button>
+</ion-buttons>
+
+<ion-icon ion-item>
+  <h1 style="margin-left: 30%"> BrainTech </h1>
+
+  <ion-avatar item-end>
+    <img src="download.jpg">
+  </ion-avatar>
+</ion-icon>
+</ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="border-color: black;">
+<form [formGroup]="userEditForm" (ngSubmit)="save()">
+
+<ion-item>
+
+  <ion-avatar style="margin-left: 40%;">
+    <img src="{{ this.lastImage }} " style="width: 30%;height: 30%;border-color: black;" (tap)="viewPhotoOption()" [hidden]="lastImage!=LM" >
+    <img src="{{pathForImage(lastImage)}}" style="width: 30%;height: 30%;border-color: black;" (tap)="viewPhotoOption()" [hidden]="lastImage==LM">
+  </ion-avatar>
+
+  <ion-note [hidden]="lastImage !== null" style="margin-left: 27%; ">Choose Image</ion-note>
+</ion-item>
+<ion-item>
+ <ion-label>Name</ion-label>
+      <ion-input type="text" name="name" formControlName="name"  [(ngModel)]="username"  ></ion-input>
+      </ion-item>
+      <div  *ngIf="name.hasError('required') && name.touched ">* Username is Invalid</div>   
+      <div   *ngIf="!name.valid &&  name.hasError('minlength') ">* Minimum 5 Character Required</div>   
+    <ion-item>
+      <ion-label>DOB</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="DDDD MMMM YYYY" name="dob" formControlName="myDOB" [(ngModel)]="Dbirth"   ></ion-datetime>
+    </ion-item>
+
+  <ion-item>
+      <ion-label>Prefered Language</ion-label>
+      <ion-select name="planguage" formControlName="preLanguage"  [(ngModel)]="Language"  >
+        <ion-label>Language</ion-label>
+        <ion-option value="English">English</ion-option>
+        <ion-option value="Gujarati">Gujarati</ion-option>
+        <ion-option value="Hindhi">Hindhi</ion-option>
+        <ion-option value="Marathi">Marathi</ion-option>
+        <ion-option value="Tamil">Tamil</ion-option>
+        <ion-option value="Malaylam">Malaylam</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+
+<button ion-button type="submit" block >Update</button>
+</form>
+
+
+
+</ion-content>

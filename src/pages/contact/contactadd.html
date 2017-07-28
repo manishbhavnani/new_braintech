@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-avatar item-start>
+
+            <ion-icon ion-item (click)="gotohome()">
+                <h1 style="margin-left: 30%"> BrainTech </h1>
+
+            </ion-icon>
+        </ion-avatar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header" style="margin-top: 18%">
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="contactObject.displayName" placeholder="Enter Your Name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="contactObject.nickName" placeholder="Enter Your Other Name "></ion-input>
+        </ion-item>
+        <ion-item>
+
+            <ion-input type="tel" [(ngModel)]="contactObject.phoneNumber" placeholder="Enter Phone number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-select [(ngModel)]="contactObject.phoneType">
+                <ion-option value="home">Home</ion-option>
+                <ion-option value="work">Work</ion-option>
+                <ion-option value="other">Other</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+<ion-footer no-border>
+    <button ion-button block (click)="addContact(contactObject)">Save</button>
+</ion-footer>

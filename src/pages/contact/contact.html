@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-avatar item-start>
+
+            <ion-icon ion-item (click)="gotohome()">
+                <h1 style="margin-left: 30%"> BrainTech </h1>
+
+            </ion-icon>
+        </ion-avatar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (ionInput)="findContact($event)" placeholder="Enter Your Contact name" [(ngModel)]="searchQuery"></ion-searchbar>
+
+
+
+    <ion-list [hidden]="!search">
+        <ion-item *ngFor="let item of  contactsfound" (click)="viewModel(item.id)">
+            {{item.displayName}}
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+
+
+    <button ion-button icon-only style="margin-left: 35%" (click)="newContact()">
+ <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+              
+</button>
+
+
+
+</ion-footer>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only [navPush]="homepage">
+      </button>
+    </ion-buttons>
+    <ion-icon ion-item>
+      <h1 style="margin-left: 30%"> BrainTech </h1>
+      <ion-avatar item-end>
+        <img src="download.jpg">
+      </ion-avatar>
+    </ion-icon>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="border-color: black;">
+  <form [formGroup]="userForm" (ngSubmit)="save()">
+    <ion-item>
+      <ion-avatar style="margin-left: 40%;">
+        <img src="{{pathForImage(lastImage)}}" style="width: 30%;height:  60%;border-color: black;" (tap)="viewPhotoOption()">
+      </ion-avatar>
+      <ion-note [hidden]="lastImage !== null" style="margin-left: 27%; ">Choose Image</ion-note>
+    </ion-item>
+
+
+      <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" name="name" formControlName="name"  [(ngModel)]="username" placeholder="Username"  ></ion-input>
+      </ion-item>
+
+      <div  *ngIf="name.hasError('required') && name.touched ">* Username is Invalid</div>   
+        <div   *ngIf="!name.valid &&  name.hasError('minlength') ">* Minimum 5 Character Required</div>   
+    <ion-item>
+      <ion-label>DOB</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="DDDD MMMM YYYY" name="dob" formControlName="myDOB"   placeholder="Select Your Date Of Birth"  ></ion-datetime>
+    </ion-item>
+
+
+
+
+    <ion-item>
+      <ion-label>Prefered Language</ion-label>
+      <ion-select name="planguage" formControlName="preLanguage"  placeholder="Select Your Preferred Language" >
+        <ion-label>Language</ion-label>
+        <ion-option value="English">English</ion-option>
+        <ion-option value="Gujarati">Gujarati</ion-option>
+        <ion-option value="Hindhi">Hindhi</ion-option>
+        <ion-option value="Marathi">Marathi</ion-option>
+        <ion-option value="Tamil">Tamil</ion-option>
+        <ion-option value="Malaylam">Malaylam</ion-option>
+      </ion-select>
+    </ion-item>
+ 
+    <button ion-button type="submit" [disabled]="!userForm.valid">Submit</button>
+  </form>
+</ion-content>

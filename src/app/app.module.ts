@@ -26,6 +26,7 @@ import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/cont
 import { ContactAdd } from '../pages/contact/contactadd';
 import { ContactEdit } from '../pages/contact/contactedit';
 import { ImageProfileList } from '../pages/home/imageProfileList/imageprofilelist';
+<<<<<<< HEAD
 import { Network } from '@ionic-native/network';
 import { Social } from '../pages/social/social';
 import { SMS } from '@ionic-native/sms';
@@ -37,6 +38,11 @@ import { CallNumber } from '@ionic-native/call-number';
 import {BarcodeScan} from '../pages/barcodeScanner/barcodescanner';
 import { BarcodeScanner} from '@ionic-native/barcode-scanner';
 import { QRScanner } from '@ionic-native/qr-scanner';
+=======
+
+
+
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
 @NgModule({
   declarations: [
     MyApp,
@@ -52,8 +58,12 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     Social,
     ContactAdd,
     ContactEdit,
+<<<<<<< HEAD
     ImageProfileList,
     BarcodeScan
+=======
+    ImageProfileList
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
   ],
   imports: [
     BrowserModule,
@@ -78,8 +88,12 @@ import { QRScanner } from '@ionic-native/qr-scanner';
     ContactSearch,
     Music,
     ContactAdd,
+<<<<<<< HEAD
     ImageProfileList,
     BarcodeScan
+=======
+    ImageProfileList
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
   ],
   providers: [
     QRScanner,

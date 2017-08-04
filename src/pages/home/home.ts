@@ -5,7 +5,11 @@ import { UserAdd } from '../user-add/user-add';
 import { Profile } from '../profile/profile';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Camera } from '@ionic-native/camera';
+<<<<<<< HEAD
 import { ImageProfileList } from './imageProfileList/imageprofilelist';
+=======
+import {ImageProfileList } from './imageProfileList/imageprofilelist';
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
 
 var lastIndex;
 @Component({
@@ -62,7 +66,11 @@ setTimeout(() => {
   /**
    * Initalization Of LoadData
    */
+<<<<<<< HEAD
   public loadData(): any {
+=======
+ public  loadData(): any {
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
     this.storage.get('brainvire').then((d) => {
       this.myTracks = d;
       this.data = d;
@@ -80,9 +88,15 @@ setTimeout(() => {
     this.language = false;
   }
 
+<<<<<<< HEAD
   public imageList(): any {
     let profileModal = this.modalCtrl.create(ImageProfileList);
     profileModal.present();
+=======
+ public imageList(): any {
+      let profileModal = this.modalCtrl.create(ImageProfileList);
+      profileModal.present(); 
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
   }
   public editProfileModal(i): any {
     this.navCtrl.push(Profile, { userId: i });
@@ -172,15 +186,24 @@ setTimeout(() => {
     this.navCtrl.push(UserAdd);
 
   }
+<<<<<<< HEAD
   public remove() {
     console.log(this.userCheck);
+=======
+ public remove() {
+  console.log(this.userCheck);
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
     if (this.userCheck.length >= 1) {
       console.log("Total Push" + JSON.stringify(this.userCheck));
       for (let i of this.userCheck) {
         this.myTracks.splice(i.value, 1);
       }
       this.storage.set('brainvire', this.myTracks);
+<<<<<<< HEAD
       this.userCheck = [];
+=======
+      this.userCheck=[];
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
     }
   }
 }

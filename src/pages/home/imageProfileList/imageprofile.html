@@ -11,7 +11,11 @@
     </ion-icon>
   </ion-navbar>
 
+<<<<<<< HEAD
        <ion-searchbar [(ngModel)]="searchQuery1" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)" ></ion-searchbar>
+=======
+  <ion-searchbar [(ngModel)]="searchQuery1"></ion-searchbar>
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
 
 </ion-header>
 
@@ -20,8 +24,13 @@
 
   <ion-grid>
     <ion-row>
+<<<<<<< HEAD
       <ion-col col-3 *ngFor="let  data of  data ">
          <ion-thumbnail  style="height: 80%;width:80%" *ngIf="data.image!=null">
+=======
+      <ion-col col-3 *ngFor="let  data of  mydata ">
+         <ion-thumbnail  style="height: 80%;width:80%" *ngIf="data.image!=''">
+>>>>>>> 0e603416b1c3ffe2dcb3e5018d716951268f06c0
            
           <img src="{{data.image}}" style="height: 100%;width:100%" >
          </ion-thumbnail>

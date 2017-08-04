@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-avatar item-start>
+
+      <ion-icon ion-item>
+        <h1 style="margin-left: 15%">  Scanner </h1>
+      </ion-icon>
+    </ion-avatar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Scan</h1>
+  <button block (click)="click()" color="primary">Scan</button>
+  <button block (click)="qrScann()" color="primary">Qrscan</button>
+</ion-content>

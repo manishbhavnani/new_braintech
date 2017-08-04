@@ -7,13 +7,17 @@ import { Music } from '../pages/music/music';
 import { PageGmapAutocomplete } from '../pages/map/page-gmap-autocomplete/page-gmap-autocomplete';
 import { HomePage } from '../pages/home/home';
 import { ContactSearch } from '../pages/contact/contact';
+import { Social } from '../pages/social/social';
+import { AppRate } from '@ionic-native/app-rate';
+import {BarcodeScan} from '../pages/barcodeScanner/barcodescanner';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any =HomePage;
   @ViewChild(Nav) nav: Nav;
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,private appRate: AppRate) {
     this.initializeApp();
   }
 
@@ -42,6 +46,44 @@ export class MyApp {
 
   }
 
+
+Social(){
+
+    this.nav.setRoot(Social);
+}
+
+
+Rate(){
+
+  // App Preference Store Url
+// this.appRate.preferences.storeAppURL = {
+//   ios: '<app_id>',
+//   android: 'market://details?id=<package_name>',
+//   windows: 'ms-windows-store://review/?ProductId=<store_id>'
+// };
+
+this.appRate.promptForRating(true);
+
+ // Remind Me latter App Preference Store Code
+// or, override the whole preferences object
+// this.appRate.preferences = {
+//   usesUntilPrompt: 3,
+//   storeAppURL: {
+//    ios: '<app_id>',
+//    android: 'market://details?id=<package_name>',
+//    windows: 'ms-windows-store://review/?ProductId=<store_id>'
+//   }
+// }; 
+
+// this.appRate.promptForRating(false);
+
+}
+
+
+public Barcode()
+  {
+this.nav.setRoot(BarcodeScan);
+  }
 
 
 }

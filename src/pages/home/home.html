@@ -15,10 +15,20 @@
       </ion-icon>
     </ion-avatar>
   </ion-navbar>
-  <ion-searchbar [(ngModel)]="searchQuery1" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)">
-  </ion-searchbar>
 
 
+ <ion-card>
+      
+        <ion-list>
+
+            <ion-searchbar [(ngModel)]="searchQuery1" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)" ></ion-searchbar>
+               <button ion-button style="margin-left:40%" (click)="imageList()">
+          <ion-icon ios="ios-images" md="md-images"></ion-icon>
+        </button>
+
+
+        </ion-list>
+ </ion-card>
 
 </ion-header>
 
@@ -53,6 +63,9 @@
 </ion-content>
 
 <ion-footer>
+
+
+ 
   <ion-fab #fab>
     <button ion-fab color="primary" top right mini> <ion-icon ios="ios-search" md="md-search"></ion-icon></button>
     <ion-fab-list side="top">
@@ -108,17 +121,24 @@ Available Images
   </ion-fab>
 
 
+ 
 
-  <ion-item style="margin-left:20%">
-    <button ion-button icon-right (tap)="addUser()" [navPush]="pushPage">
-  Add
-  <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-</button>
-    <button ion-button icon-right (tap)="remove()">
-  Delete
-   <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
-</button>
+<ion-segment [(ngModel)]="relationship" color="primary" >
+    <ion-segment-button  (click)="addUser()">
+      <ion-icon ios="ios-add-circle" md="md-add-circle"  ></ion-icon>    
+      ADD USER
+          
+    </ion-segment-button>
+    <ion-segment-button (click)="remove()">
+        <ion-icon ios="ios-trash" md="md-trash" ></ion-icon>
+      REMOVE USER     
+    </ion-segment-button>
+ 
 
-  </ion-item>
+    
 
+    
+  </ion-segment>
+ 
+    
 </ion-footer>

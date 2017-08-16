@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "841514319862",
+    "firebase_url": "https://gmailint-175505.firebaseio.com",
+    "project_id": "gmailint-175505",
+    "storage_bucket": "gmailint-175505.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841514319862:android:36e17376fc85ff1b",
+        "android_client_info": {
+          "package_name": "com.brainvire.braintech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841514319862-8ruqla1ttcmjkmgf1rv2vgub5vd5o40f.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "841514319862-bsqa44i54smgdbj2klsk1e2sb32pd21g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI1TDCJlVDHtcW3oeGY6gGs-CQoT8kWQw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -25,7 +25,19 @@ import { ContactSearch } from '../pages/contact/contact';
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 import { ContactAdd } from '../pages/contact/contactadd';
 import { ContactEdit } from '../pages/contact/contactedit';
-
+import { ImageProfileList } from '../pages/home/imageProfileList/imageprofilelist';
+import { Network } from '@ionic-native/network';
+import { Social } from '../pages/social/social';
+import { SMS } from '@ionic-native/sms';
+import { FCM } from '@ionic-native/fcm';
+import {HttpModule} from '@angular/http';
+import { SocialService } from '../pages/social/socialService';
+import { AppRate } from '@ionic-native/app-rate';
+import { CallNumber } from '@ionic-native/call-number';
+import {BarcodeScan} from '../pages/barcodeScanner/barcodescanner';
+import { BarcodeScanner} from '@ionic-native/barcode-scanner';
+import {List} from '../pages/list/list';
+// import { QRScanner } from '@ionic-native/qr-scanner';
 @NgModule({
   declarations: [
     MyApp,
@@ -38,12 +50,17 @@ import { ContactEdit } from '../pages/contact/contactedit';
     LiveMap,
     Music,
     ContactSearch,
+    Social,
     ContactAdd,
-    ContactEdit
+    ContactEdit,
+    ImageProfileList,
+    BarcodeScan,
+    ImageProfileList,
+    List
   ],
   imports: [
     BrowserModule,
-    
+    HttpModule,
     IonicAudioModule.forRoot(defaultAudioProviderFactory),
     IonicStorageModule.forRoot(),
     ReactiveFormsModule,
@@ -55,6 +72,7 @@ import { ContactEdit } from '../pages/contact/contactedit';
     HomePage,
     UserAdd,
     Profile,
+    Social,
     MapView,
     PageGmapAutocomplete,
     ContactEdit,
@@ -62,9 +80,20 @@ import { ContactEdit } from '../pages/contact/contactedit';
     LiveMap,
     ContactSearch,
     Music,
-    ContactAdd
+    ContactAdd,
+    ImageProfileList,
+    BarcodeScan,
+    ImageProfileList,
+    List
+
   ],
   providers: [
+    // QRScanner,
+    BarcodeScanner,
+    CallNumber,
+    AppRate,
+    FCM,
+    SMS,
     StatusBar,
     SplashScreen,
     UserAdd,
@@ -72,6 +101,7 @@ import { ContactEdit } from '../pages/contact/contactedit';
     ContactEdit,
     Contacts,
     Contact,
+    Network,
     File,
     FilePath,
     Geolocation,

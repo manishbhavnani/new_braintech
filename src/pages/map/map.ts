@@ -5,6 +5,8 @@ import { NearByMap  } from './nearbymap';
  import {   HomePage } from '../home/home';
 import { LiveMap } from './livemap';
 import { PageGmapAutocomplete} from './page-gmap-autocomplete/page-gmap-autocomplete';
+import { Network } from '@ionic-native/network';
+
 declare var google: any;
 @Component({
   selector: 'map-view',
@@ -24,10 +26,18 @@ currentPos : Geoposition;
 map: any;
 public currentLocation;
 
-  constructor(public navCtrl: NavController,private geolocation : Geolocation,public viewCtrl: ViewController,public modalCtrl:ModalController) {}
+  constructor(public navCtrl: NavController,private geolocation : Geolocation,public viewCtrl: ViewController,public modalCtrl:ModalController,public network: Network) {
+
+  }
 
 
 ngOnInit() {
+
+
+let connectSubscription = this.network.onConnect().subscribe(() => {
+  console.log('network connected!');
+
+});
 
 
 
@@ -113,7 +123,9 @@ this.navCtrl.push(LiveMap);
     ;
     })
     }
+
     ionViewDidEnter(){
+
     this.getUserPosition();}   
 
     addMap(lat,long){
@@ -185,6 +197,16 @@ gotohome()
     }
 
 
+
+
+
+
+displayNetworkUpdate(connectionState: string){
+  let networkType = this.network.type
+  console.log(connectionState);
+  console.log(networkType);
+  
+}
 
 
 

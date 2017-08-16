@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-avatar item-start>
+
+      <ion-icon ion-item>
+        <h1 style="margin-left: 30%"> BrainTech </h1>
+      </ion-icon>
+    </ion-avatar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+<ion-label floating>Write Message</ion-label>
+    <ion-input type="text" [(ngModel)]="msg">
+</ion-input>
+    </ion-item>
+
+<ion-item>
+<ion-label floating>Mobile Number </ion-label>
+    <ion-input type="number" [(ngModel)]="mobileNumber">
+</ion-input>
+    </ion-item>
+</ion-content>
+
+<ion-footer>
+
+<ion-segment  color="Danger" >
+    <ion-segment-button  (click)="sendTextMessage()">
+     <ion-icon ios="ios-send" md="md-send"></ion-icon>  
+       Send Message         
+    </ion-segment-button>
+    <ion-segment-button (click)="callNumber()">
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>
+    Call   
+    </ion-segment-button>
+ 
+
+    
+
+    
+  </ion-segment>
+
+
+    
+</ion-footer>

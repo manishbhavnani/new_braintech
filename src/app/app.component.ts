@@ -10,7 +10,10 @@ import { ContactSearch } from '../pages/contact/contact';
 import { Social } from '../pages/social/social';
 import { AppRate } from '@ionic-native/app-rate';
 import {BarcodeScan} from '../pages/barcodeScanner/barcodescanner';
+<<<<<<< HEAD
 import {List} from '../pages/list/list';
+=======
+>>>>>>> ed8b301362ca194870612b194fb34a150d1922fb
 
 @Component({
   templateUrl: 'app.html'
